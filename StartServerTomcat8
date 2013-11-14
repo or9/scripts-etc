@@ -1,0 +1,5 @@
+#!/bin/bash
+
+/usr/share/tomcat/bin/catalina.sh run
+
+exit 0

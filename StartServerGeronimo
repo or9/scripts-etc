@@ -1,0 +1,5 @@
+#!/bin/bash
+
+/usr/share/geronimo/bin/geronimo run
+
+exit 0

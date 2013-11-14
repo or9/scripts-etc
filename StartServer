@@ -1,0 +1,30 @@
+#!/bin/bash
+
+servers=(
+	# Servers to start
+	# Store location in separate script file so gnome-terminal doesn't get confused
+	"/home/drahman/StartServerTomcat8"
+	"/home/drahman/StartServerGeronimo"
+	#"/usr/share/tomcat/bin/catalina.sh\ run"
+	#"/usr/share/geronimo/bin/geronimo\ run"
+)
+titles=(
+	# Server titles based on $servers' index
+	"Apache Tomcat 8 server"
+	"Apache Geronimo server"
+)
+
+run_new_term() {
+	# $1:cmd, $2:title
+	echo "Opening $2; running $1"
+	gnome-terminal --title="$2" --window-with-profile="Servers" -e "sudo /bin/bash -c '$1; exec /bin/bash -i'"
+#	gnome-terminal --tab --title="$title" --window-with-profile="Servers" -e "sudo $2"
+}
+
+for ((i = 0; i < ${#servers[@]}; i++))
+do
+	#echo "${servers[$i]}" "${titles[$i]}"
+	run_new_term "${servers[$i]}" "${titles[$i]}"
+done
+
+exit $?

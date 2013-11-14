@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Open specified file in flash player debugger (standalone)
+
+flashplayerdebugger $1
+exit $?
