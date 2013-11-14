@@ -1,0 +1,5 @@
+#!/bin/bash
+# Open Eclipse using default workspace and default icons
+# Use Apple's Icon Composer to create icns files
+
+open -n /Applications/eclipse/Eclipse.app --args -data /Users/drahman/Workspace/workspaceName -Xdock:icon=/Applications/eclipse/eclipse.app/Contents/Resources/icon3.icns

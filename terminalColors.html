@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<!--<link rel="shortcut icon" type="image/x-icon" href="….ico">-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="How to set terminal colors on Mac OS X">
+	<meta name="keywords" content="terminal colors, OS X, Mac, CLI">
+	<meta name="author" content=":Durmon">
+	<meta http-equiv="Content-Language" content="en">
+</head>
+
+<body>
+    <h1>Setting terminal colors on Mac OS X</h1>
+    <code>
+        cd ~<br />
+        vim .bash_profile<br />
+        # If file existed already, add to bottom; otherwise file will be created from previous command.<br />
+        # Place following commands at end<br />
+        export CLICOLOR=1<br />
+        export LSCOLORS=ExFxBxDxCxegedabagacad
+    </code>
+    <dl>
+        <dt>CLICOLOR</dt>
+        <dd>[1|0]; Boolean indicating whether to use command line colors.</dd>
+        <dt>LSCOLORS</dt>
+        <dd>The value of this variable describes what color to use
+            for which attribute when colors are enabled with CLICOLOR.<br />
+            This string is a concatenation of pairs of the
+            format fb, where f is the foreground color and b is the
+            background color.</dd>
+    </dl>
+    <dl>
+        <dt class="black">a</dt>
+        <dd class="black">black</dd>
+        <dt class="">b</dt>
+        <dd class="">red</dd>
+        <dt class="">c</dt>
+        <dd class="">green</dd>
+        <dt class="">d</dt>
+        <dd class="">brown</dd>
+        <dt class="">e</dt>
+        <dd class="">blue</dd>
+        <dt class="">f</dt>
+        <dd class="">magenta</dd>
+        <dt class="">g</dt>
+        <dd class="">cyan</dd>
+        <dt class="">h</dt>
+        <dd class="">light grey</dd>
+        <dt class="">A</dt>
+        <dd class="">bold black; usually shows as light grey</dd>
+        <dt class="">B</dt>
+        <dd class="">bold red</dd>
+        <dt class="">C</dt>
+        <dd class="">bold green</dd>
+        <dt class="">D</dt>
+        <dd class="">bold brown; usually shows as yellow</dd>
+        <dt class="">E</dt>
+        <dd class="">bold blue</dd>
+        <dt class="">F</dt>
+        <dd class="">bold magenta</dd>
+        <dt class="">G</dt>
+        <dd class="">bold cyan</dd>
+        <dt class="">H</dt>
+        <dd class="">bold light grey; usually shows as bright white</dd>
+        <dt class="">x</dt>
+        <dd class="">default [fore/back]ground</dd>
+    </dl>
+</body>
+</html>
