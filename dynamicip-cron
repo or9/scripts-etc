@@ -1,1 +1,6 @@
+# osx:		kDMUzMtwRQmSKD4V
+# os0:		7nxO9GjUCZJLIfbt
+# os1:		KBxtZgN3svwRrNQ7
+# oslap:	V0otNXsXa7cpfpBt
+# ftp:		T7NDIqmhb4XfWhgj
 */5	*	*	*	*	curl -4 "https://sudo.net-me.net:GENPASSWORDVALUE@dynamic.net-me.net/update?hostname=HOSTNAME"
