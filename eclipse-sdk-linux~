@@ -1,0 +1,16 @@
+#! /bin/bash
+
+ECLIPSE_WSPACE=""
+DIR="$HOME/Workspace/"
+
+if [ -n "$1" ]
+then ECLIPSE_WSPACE=$DIR$1 
+fi
+
+echo eclipse workspace is $ECLIPSE_WSPACE
+
+#exit $?
+#$UBUNTU_MENUPROXY=0
+setterm -fore green -reverse on
+eclipse -data $ECLIPSE_WSPACE -name "$1" -clean UBUNTU_MENUPROXY=0
+
