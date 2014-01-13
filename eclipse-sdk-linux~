@@ -12,5 +12,6 @@ echo eclipse workspace is $ECLIPSE_WSPACE
 #exit $?
 #$UBUNTU_MENUPROXY=0
 setterm -fore green -reverse on
-eclipse -data $ECLIPSE_WSPACE -name "$1" -clean UBUNTU_MENUPROXY=0
+UBUNTU_MENUPROXY=0 eclipse-latest -data $ECLIPSE_WSPACE -name "$1" -clean
 
+exit $?
