@@ -17,7 +17,8 @@ runtime! archlinux.vim
 set number
 set shiftwidth=2
 set tabstop=2
-set expandtab=noexpandtab
-autoindent
+set autoindent
+set ignorecase
+set smartcase
 filetype plugin indent on
 autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
