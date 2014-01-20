@@ -1,19 +1,6 @@
-" All system-wide defaults are set in $VIMRUNTIME/archlinux.vim (usually just
-" /usr/share/vim/vimfiles/archlinux.vim) and sourced by the call to :runtime
-" you can find below.  If you wish to change any of those settings, you should
-" do it in this file (/etc/vimrc), since archlinux.vim will be overwritten
-" everytime an upgrade of the vim packages is performed.  It is recommended to
-" make changes after sourcing archlinux.vim since it alters the value of the
-" 'compatible' option.
-
-" This line should not be removed as it ensures that various options are
-" properly set to work with the Vim-related packages.
-runtime! archlinux.vim
-
-" If you prefer the old-style vim functionalty, add 'runtime! vimrc_example.vim'
-" Or better yet, read /usr/share/vim/vim74/vimrc_example.vim or the vim manual
-" and configure vim to your own liking!
-
+set nocompatible
+syntax on
+colo default
 set number
 set shiftwidth=2
 set tabstop=2
@@ -22,3 +9,28 @@ set ignorecase
 set smartcase
 filetype plugin indent on
 autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
+
+
+" Open a file and type :colorscheme followed by a space
+" Press tab to cycle (or shift-tab to reverse).
+" Press enter to immediately select the scheme
+" 
+" Available colors are…
+"
+" /usr/share/vim/vim73/colors/blue.vim
+" /usr/share/vim/vim73/colors/darkblue.vim
+" /usr/share/vim/vim73/colors/default.vim
+" /usr/share/vim/vim73/colors/delek.vim
+" /usr/share/vim/vim73/colors/desert.vim
+" /usr/share/vim/vim73/colors/elflord.vim
+" /usr/share/vim/vim73/colors/evening.vim
+" /usr/share/vim/vim73/colors/koehler.vim
+" /usr/share/vim/vim73/colors/morning.vim
+" /usr/share/vim/vim73/colors/murphy.vim
+" /usr/share/vim/vim73/colors/pablo.vim
+" /usr/share/vim/vim73/colors/peachpuff.vim
+" /usr/share/vim/vim73/colors/ron.vim
+" /usr/share/vim/vim73/colors/shine.vim
+" /usr/share/vim/vim73/colors/slate.vim
+" /usr/share/vim/vim73/colors/torte.vim
+" /usr/share/vim/vim73/colors/zellner.vim
