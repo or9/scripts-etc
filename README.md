@@ -2,7 +2,7 @@
 
 Scripts that I have written or found useful. Probably Linux / Unix
 
-[Aria2c](#aria]
+[Aria2c](#aria)
 
 ## <a name="aria"></a>Aria .bat Script
 
