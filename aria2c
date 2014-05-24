@@ -1,0 +1,1 @@
+aria2c --bt-enable-lpd=true --bt-max-open-files=500 --bt-max-peers=1000
