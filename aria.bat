@@ -21,7 +21,7 @@ rem # download single file from a URL #
 rem ###################################
 :DLURL
 echo downloading single file from URL
-rem aria2c --on-download-complete=exit --check-integrity=true --file-allocation=falloc --max-concurrent-downloads=5 --continue=true --max-connection-per-server=8 --bt-enable-lpd=true --bt-max-peers=0 "%1"
+aria2c --on-download-complete=exit --check-integrity=true --file-allocation=falloc --max-concurrent-downloads=5 --continue=true --max-connection-per-server=8 --bt-enable-lpd=true --bt-max-peers=0 "%1"
 
 goto END
 
@@ -31,7 +31,7 @@ rem #####################################
 :DLTXT
 echo downloading file(s) from .txt doc
 
-rem aria2c --on-download-complete=exit --check-integrity=true --file-allocation=falloc --max-concurrent-downloads=5 --continue=true --max-connection-per-server=8 --bt-enable-lpd=true --bt-max-peers=0 -i%1
+aria2c --on-download-complete=exit --check-integrity=true --file-allocation=falloc --max-concurrent-downloads=5 --continue=true --max-connection-per-server=8 --bt-enable-lpd=true --bt-max-peers=0 -i%1
 
 goto END
 
