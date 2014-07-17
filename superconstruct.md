@@ -18,29 +18,24 @@ Not that it's relavant to the topic, but as an aside…. Due to the write-only n
 
 ````
 var littleCon = new Con("littleCon prop1", "littleCon prop2");
-littleCon.getProp(1); // __"littleCon prop1"__
-littleCon.getProp(2); // _"littleCon prop2"_
+littleCon.getProp(1); 
+	// "littleCon prop1"
+littleCon.getProp(2); 
+	// "littleCon prop2"
 
-littleCon.shared(); // _"TypeError: 'undefined' is not a function (evaluating 'littleCon.shared()')"_
+littleCon.shared(); 
+	// "TypeError: 'undefined' is not a function (evaluating 'littleCon.shared()')"
 
 Con.prototype.shared = function() {
 	return "prototype shared object after object creation and instantiation. Open for extension….";
 };
 
-littleCon.shared(); // _"prototype shared object after object creation and instantiation. Open for extension…."_
+littleCon.shared(); 
+	// "prototype shared object after object creation and instantiation. Open for extension…."
 
 SuperCon.prototype = new Con("super con prop 1", "super con prop2");
 
 var superduper = new SuperCon("superman");
-
-superduper has the following methods:
-* getProp
-	* 1 // _"super con prop 1"_
-	* 2 // _"super con prop2"_
-* shared
-	* _"prototype shared object after object creation and instantiation. Open for extension…."_
-* getName
-	* _"superman"_
 
 function SuperCon(_name) {
 	var name = _name || null;
