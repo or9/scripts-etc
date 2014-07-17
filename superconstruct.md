@@ -46,8 +46,8 @@ function SuperCon(_name) {
  
 function Con(_prop1, _prop2) {
 	var obj = {
-		prop1: _prop1 || null,
-		prop2: _prop2 || null
+		prop1: _prop1 || "Default prop 1. Was not set upon instantiation",
+		prop2: _prop2 || "Default prop2. Was not set upon instantiation" 
 	};
 
 	this.getProp = function(n) {
