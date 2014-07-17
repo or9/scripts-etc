@@ -5,7 +5,7 @@ Just another document on constructors because I think they're pretty cool, and s
 We'll take a short look at this behavior of instantiating a constructor in a way which appears to be prior to declaration. But first, just a bit of info on types of functions in JavaScript, namely, named functions and anonymous functions:
 * `function someFn() {}` // _Named function, will be hoisted within scope_
 * `var someFn = function() {}` // _Anonymous function with pointer. Will not be hoisted. Available only after declaration_
-* `var someFn = function someFn() {}` // _Named function with pointer. Will not be hoisted if the pointer name is the same as function name which overwrites function name, and if the variable name is not the same, then this just seems like a bad idea. It may help in stack tracing_
+* `var someFn = function someFn() {}` // _Named function with pointer. Will not be hoisted (var nor function). It may help in stack tracing, but not sure why you would use this_
 * ~~`someFn = function() {}`~~ // _Anonymous function with pointer. Will be hoisted because of violation of scope, will always be global, and will throw exception in strict mode. __Don't do this___
 
 ##Without Further Ado…
