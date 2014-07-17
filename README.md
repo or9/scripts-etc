@@ -10,4 +10,4 @@ Symbolic link can be created to Sys32 directory. Open cmd as Admin and enter the
 ````
 mklink aria.bat \Users\<your username>\Downloads\aria.bat
 ````
-Now open a new prompt as a normal user, and you should be able to run `aria some?magnet&url@1337.torrent.magnet` or `aria C:\Users\<your username>\Documents\my-list-file.txt` and expect it to run with good options
+Now open a new prompt as a normal user, and you should be able to run `aria "some?magnet&url@1337.torrent.magnet"` or `aria "C:\Users\<your username>\Documents\my-list-file.txt"` and expect it to run with good options
