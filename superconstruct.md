@@ -6,7 +6,7 @@ We'll take a short look at this behavior of instantiating a constructor in a way
 * `function someFn() {}` // Named function, will be hoisted within scope
 * `var someFn = function() {}` // Anonymous function with pointer. Will not be hoisted. Available only after declaration
 * `var someFn = function someFn() {}` // Named function with pointer. Will not be hoisted if the pointer name is the same as function name which overwrites function name, and if the variable name is not the same, then this just seems like a bad idea. It may help in stack tracing.
-* `-someFn = function() {}-` // Anonymous function with pointer. Will be hoisted because of violation of scope, will always be global, and will throw exception in strict mode. Don't do this
+* `~~someFn = function() {}~~` // Anonymous function with pointer. Will be hoisted because of violation of scope, will always be global, and will throw exception in strict mode. Don't do this
 
 ##Without Further Ado…
 Actors:
