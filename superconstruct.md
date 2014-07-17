@@ -18,8 +18,8 @@ Not that it's relavant to the topic, but as an aside…. Due to the write-only n
 
 ````
 var littleCon = new Con("littleCon prop1", "littleCon prop2");
-littleCon.getProp(1); // "littleCon prop1"
-littleCon.getProp(2); // "littleCon prop2"
+littleCon.getProp(1); // __"littleCon prop1"__
+littleCon.getProp(2); // _"littleCon prop2"_
 
 littleCon.shared(); // _"TypeError: 'undefined' is not a function (evaluating 'littleCon.shared()')"_
 
