@@ -42,5 +42,5 @@ bakcyn='\e[46m'		#	Cyan
 bakwht='\e[47m'		#	White
 txtrst='\e[0m'		#	Text Reset
 
-PROMPT_COMMAND='history -a;echo -en "\033[m\033[38;5;2m"$(( `sed -n "s/MemFree:[\t ]\+\([0-9]\+\) kB/\1/p" /proc/meminfo`/1024))"\033[38;5;22m/"$((`sed -n "s/MemTotal:[\t ]\+\([0-9]\+\) kB/\1/Ip" /proc/meminfo`/1024 ))MB"\033[m"'
-PS1='\n\[\e[0;32m\]\t-[\u@\H] \[\e[1;34m\][\w]\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
+PROMPT_COMMAND='history -a;echo -en "\033[m\033[38;5;2m"$(( `sed -n "s/MemFree:[\t ]\+\([0-9]\+\) kB/\1/p" /proc/meminfo`/1024))"\033[38;5;22m/"$((`sed -n "s/MemTotal:[\t ]\+\([0-9]\+\) kB/\1/Ip" /proc/meminfo`/1024 ))MB"\033[m \t"'
+PS1='\[\e[0;32m\]\t-[\u@\H] \[\e[1;34m\]\011[\w]\[\e[m\] \[\e[1;32m\]\n\$\[\e[m\] \[\e[1;37m\]'
