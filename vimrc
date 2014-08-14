@@ -21,11 +21,14 @@ set autoindent
 filetype plugin indent on
 set ignorecase	" ignore case in searches
 set smartcase		" unless there's a capital letter
+set magic
 set showcmd
 set scrolloff=5
 set wildmenu " ex., :e <tab> shows list of available <e> commands
 set visualbell
 set noerrorbells
+set ruler
+set hidden
 set backspace=indent,eol,start
 set wildchar=<Tab> wildmenu wildmode=full
 set wildcharm=<C-Z>
@@ -41,6 +44,11 @@ nnoremap <unique> <leader>t :MakeGreen %<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 "nnoremap <Tab> :bnext<CR>:redraw<CR>:ls<CR>
 "nnoremap <S-Tab> :bprevious<CR>:redraw<CR>:ls<CR>
+nmap <leader>T :enew<CR>
+nmap <leader>l :bnext<CR>
+nmap <leader>h :bprevious<CR>
+nmap <leader>bw :bp <BAR> bd #<CR>
+nmap <leader>bl :ls<CR>
 nnoremap <Tab> :bnext<CR>:redraw<CR>
 nnoremap <S-Tab> :bprevious<CR>:redraw<CR>
 "Javascript things
@@ -52,6 +60,8 @@ nnoremap <C-o> :TernRename<CR>
 call togglebg#map("<F5>")
 autocmd FileType javascript compiler nodeunit
 autocmd BufNewFile,BufRead *.spec.js compiler nodeunit
+autocmd BufNewFile,BufRead *_test.js compiler nodeunit
+autocmd BufWritePre,BufRead *.js|json :normal gg=G
 
 
 set nohlsearch 	" turn off highlighting for searched expressions
@@ -81,34 +91,46 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 "let g:indent_guides_enable_on_vim_startup=1
 "let g:gitgutter_highlight_lines=1
 
-function! AirlineInit()
-	let g:airline_section_a = airline#section#create(['mode',' ','branch'])
+set encoding=utf-8
+"""""""""""""""""""""""""""
+"				Airline						"
+"""""""""""""""""""""""""""
+"let g:airline_theme 						= "powerlineish"
+let g:airline_enable_branch			= 1
+let g:airline_enable_syntastic	= 1
+let g:airline_enable_statusline	= 1
+let g:airline_powerline_fonts 	= 1
 
-endfunction
-autocmd VimEnter * call AirlineInit()
+"function! AirlineInit()
+"	let g:airline_section_a = airline#section#create(['mode',' ','branch'])
+"endfunction
+"autocmd VimEnter * call AirlineInit()
 let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#fnamemod=':t'
 set statusline+=%{fugitive#statusline()}
+set noshowmode
+set cmdheight=1
+let g:bufferline_echo=0
+autocmd ColorScheme <buffer> :AirlineRefresh
 autocmd QuickFixCmdPost *grep* cwindow
 " molokai theme "
 "let g:molokai_original=1
 let g:rehash256=1
 "let g:indent_guides_auto_colors=0
 let g:indentLine_color_term = 8
-let g:indentLine_char = '⋮'
-"autocmd VimEnter,Colorscheme	*	:hi IndentGuidesOdd	guibg=grey	ctermbg=0
-"autocmd VimEnter,Colorscheme	*	:hi	IndentGuidesEven	guibg=darkgrey	ctermbg=8
+"let g:indentLine_char = '⋮'
+let g:indentLine_char = '│'
 hi Normal guibg=NONE ctermbg=NONE
 
-
-"augroup json_autocmd
-"	autocmd!
-"	autocmd FileType json set autoindent
-"	autocmd FileType json set formatoptions=tcq21
-"	autocmd FileType json set shiftwidth=2
-"	autocmd FileType json set softtabstop=2 tabstop=2
-"	autocmd FileType json set expandtab
+augroup json_autocmd
+	autocmd!
+	autocmd FileType json set autoindent
+	autocmd FileType json set formatoptions=tcq21
+	autocmd FileType json set shiftwidth=2
+	autocmd FileType json set softtabstop=2 tabstop=2
+	autocmd FileType json set expandtab
 "	autocmd FileType json set foldmethod=syntax
-"augroup END
+augroup END
 let g:vim_json_syntax_conceal=0
 let g:vim_json_syntax_concealCursor=1
 let g:indentLine_noConcealCursor=""
@@ -122,12 +144,16 @@ colorscheme solarized
 "colorscheme	molokai 
 
 "let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_autoclose_preview_window_after_insertion=1
+let g:ycm_collect_identifiers_from_tags_files=1
+set laststatus=2
 
 " Open a file and type :colorscheme followed by a space
 " Press tab to cycle (or shift-tab to reverse).
 " Press enter to immediately select the scheme
 " 
-" Available colors are…
+" Default available colors are…
 "
 " /usr/share/vim/vim73/colors/blue.vim
 " /usr/share/vim/vim73/colors/darkblue.vim
