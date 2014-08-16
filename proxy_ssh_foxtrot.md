@@ -42,7 +42,7 @@ function secure_chromium {
 }
 ````  
 then, from terminal you can do `secure_chromium`
-#####Shortcut
+#####Shortcut (assuming file `~/chromiumsecure`) 
 ````
 #!/bin/bash
 port=1080
@@ -51,7 +51,7 @@ exit
 ````
 then, from terminal `ln -s ~/chromiumsecure /usr/local/bin/`
 ####Firefox
-
+… Prefs, Network settings, SOCKS `localhost` port `1080`, check Remote DNS
 ##Misc.
 * The reason I don't simply send my public key is because you need the private key as well.  
 The public key is used to authorize clients on the server side. You send the public key to me, I add it to authorized\_hosts, you connect using your private key which validates against the authorized public key that I have.  
