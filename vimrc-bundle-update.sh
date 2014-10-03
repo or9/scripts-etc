@@ -8,8 +8,8 @@
 #	…vim-airline
 # 
 # Usage (assuming this file's name is update.sh)
-# cd ~/.vimrc/bundle
-# ./update.sh
+# 	cd ~/.vimrc/bundle
+# 	./update.sh
 
 find . -type d -name .git \
 	| xargs -n 1 dirname \
