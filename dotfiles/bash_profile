@@ -1,0 +1,5 @@
+PATH="/usr/local/sbin:$PATH"
+PATH="/usr/local/bin:$PATH"
+export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+export HOMEBREW_GITHUB_API_TOKEN=e7b7a55642d40c9653d1e752947bc83516232285
+export CLICOLOR=1
