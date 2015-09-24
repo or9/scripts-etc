@@ -6,6 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
@@ -22,7 +23,11 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'kien/ctrlp.vim'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'majutsishi/tagbar'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/unite.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'roman/golden-ratio'
 "Plugin 'm2mdas/phpcomplete-extended'
 
 call vundle#end()
@@ -45,6 +50,8 @@ set showmatch
 set ignorecase
 set smartcase
 set hlsearch
+nnoremap <CR> :nohlsearch<CR>/<BS>
+nnoremap <Esc> :nohlsearch<CR><Esc>
 set incsearch
 set visualbell
 set noerrorbells
@@ -64,7 +71,21 @@ cmap w!! w !sudo tee % >/dev/null
 :let g:ctrlp_match_window_bottom = 0
 :let g:ctrlp_match_window_reversed = 0
 :let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 :let g:ctrlp_working_path_mode = 0
 :let g:ctrlp_dotfiles = 0
 :let g:ctrlp_switch_buffer = 0
 ":nmap \e :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
+
+let g:airline#extensions#tabline#enabled = 1
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_user_command = 'find %s -type f'
+
+set laststatus=2
+let g:airline_powerline_fonts = 1
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
