@@ -45,4 +45,4 @@ COLOR_RESET='\e[0m'    	# Text Reset
 ###########
 
 source ~/.git-prompt.sh
-PS1="\h:\W \u\$(__git_ps1)\$ "
+PS1="\h:\W \u\[$CYAN\]\$(__git_ps1)\[$COLOR_RESET\]\$ "
