@@ -1,0 +1,4 @@
+bt-seed-unverified
+max-overall-upload-limit=10M
+max-upload-limit=1M
+seed-ratio=5.0
